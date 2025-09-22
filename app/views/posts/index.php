@@ -1,7 +1,3 @@
-          <!-- Blog Post (Right Sidebar) Start -->
-          <div class="col-md-9">
-            <div class="col-md-12 page-body">
-              <div class="row">
                 <div class="col-md-12 content-page">
                   <!-- ADD A POST -->
                   <div>
@@ -116,11 +112,3 @@
                       <li class="page-item"><a class="page-link" href="#">Next</a></li>
                     </ul>
                   </nav>
-
-                </div>
-              </div>
-            </div>
-
-        <?php include '../app/views/templates/partials/main/_footer.php'; ?>
-          </div>
-          <!-- Blog Post (Right Sidebar) End -->
