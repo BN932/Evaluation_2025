@@ -16,7 +16,7 @@
                     <!-- Post Headline End -->
 
                     <!-- Form Start -->
-                    <form action="posts/add/insert.html" method="POST" enctype="application/x-www-form-urlencoded">
+                    <form action="/posts/<?php echo $post['id'];?>/<?php echo \Core\Helpers\slugify($post['title']);?>/edit/form.html" method="POST" enctype="application/x-www-form-urlencoded">
                       <div class="form-group">
                         <label for="title">Title</label>
                         <input

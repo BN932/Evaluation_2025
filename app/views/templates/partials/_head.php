@@ -13,6 +13,8 @@
 
     <title>DevBlog - Personal Blog Template</title>
 
+    <base href="<?php echo PUBLIC_BASE_URL; ?>">
+
     <!-- Favicon -->
     <link rel="shortcut icon" href="templates/images/favicon/favicon.ico" />
     <link

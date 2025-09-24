@@ -1,35 +1,29 @@
                 <div class="col-md-12 content-page">
                   <!-- ADD A POST -->
                   <div>
-                    <a href="form.html" type="button" class="btn btn-primary"
+                    <a href="posts/add/form.html" type="button" class="btn btn-primary"
                       >Add a Post</a
                     >
                   </div>
                   <!-- ADD A POST END -->
-
+                  <?php foreach($posts as $post):?>
                   <!-- Blog Post Start -->
                   <div class="col-md-12 blog-post row">
                     <div class="post-title">
-                      <a href="single.html"
+                      <a href="posts/<?php echo $post['id'];?>/<?php echo \Core\Helpers\slugify($post['title']);?>.html"
                         ><h1>
-                          How to make your company website based on bootstrap
-                          framework on localhost?
+                          <?php echo $post['title'];?>
                         </h1></a
                       >
                     </div>
                     <div class="post-info">
-                      <span>2016-03-03</span> | <span>Life style</span>
+                      <span><?php echo $post['created_at'];?></span> | <span><?php echo $post['category_name'];?></span>
                     </div>
                     <p>
-                      Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                      Molestiae ut ratione similique temporibus tempora dicta
-                      soluta? Qui hic, voluptatem nemo quo corporis dignissimos
-                      voluptatum debitis cumque fugiat mollitia quasi quod.
-                      Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                      Molestiae ut ratione similique...
+                      <?php echo $post['quote'];?>
                     </p>
                     <a
-                      href="single.html"
+                      href="posts/<?php echo $post['id'];?>/<?php echo \Core\Helpers\slugify($post['title']);?>.html"
                       class="
                         button button-style button-anim
                         fa fa-long-arrow-right
@@ -38,77 +32,16 @@
                     >
                   </div>
                   <!-- Blog Post End -->
+                   <?php endforeach; ?>
 
-                  <!-- Blog Post Start -->
-                  <div class="col-md-12 blog-post">
-                    <div class="post-title">
-                      <a href="single.html"
-                        ><h1>
-                          How to design elegant e-mail newsletter in html for
-                          wish christmas to your subscribers?
-                        </h1></a
-                      >
-                    </div>
-                    <div class="post-info">
-                      <span>2016-02-02</span> | <span>Sport</span>
-                    </div>
-                    <p>
-                      Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                      Molestiae ut ratione similique temporibus tempora dicta
-                      soluta? Qui hic, voluptatem nemo quo corporis dignissimos
-                      voluptatum debitis cumque fugiat mollitia quasi quod.
-                      Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                      Molestiae ut ratione similique...
-                    </p>
-                    <a
-                      href="single.html"
-                      class="
-                        button button-style button-anim
-                        fa fa-long-arrow-right
-                      "
-                      ><span>Read More</span></a
-                    >
-                  </div>
-                  <!-- Blog Post End -->
-
-                  <!-- Blog Post Start -->
-                  <div class="col-md-12 blog-post">
-                    <div class="post-title">
-                      <a href="single.html"
-                        ><h1>
-                          What mistakes every beginner make, when they make
-                          website using bootstrap?
-                        </h1></a
-                      >
-                    </div>
-                    <div class="post-info">
-                      <span>2016-01-01</span> | <span>Life style</span>
-                    </div>
-                    <p>
-                      Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                      Molestiae ut ratione similique temporibus tempora dicta
-                      soluta? Qui hic, voluptatem nemo quo corporis dignissimos
-                      voluptatum debitis cumque fugiat mollitia quasi quod.
-                      Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                      Molestiae ut ratione similique...
-                    </p>
-                    <a
-                      href="single.html"
-                      class="
-                        button button-style button-anim
-                        fa fa-long-arrow-right
-                      "
-                      ><span>Read More</span></a
-                    >
-                  </div>
-                  <!-- Blog Post End -->
+                  
 
                   <nav aria-label="Page navigation example" style="text-align: center;">
                     <ul class="pagination">
                       <li class="page-item"><a class="page-link" href="#">Previous</a></li>
-                      <li class="page-item"><a class="page-link" href="#">1</a></li>
-                      <li class="page-item"><a class="page-link" href="#">2</a></li>
-                      <li class="page-item"><a class="page-link" href="#">3</a></li>
+                      <?php for($i=1; $i<=$nbrPages; $i++):?>
+                      <li class="page-item"><a class="page-link" href="posts/page<?php echo $i?>"><?php echo $i?></a></li>
+                      <?php endfor?>
                       <li class="page-item"><a class="page-link" href="#">Next</a></li>
                     </ul>
                   </nav>
