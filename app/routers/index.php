@@ -1,10 +1,10 @@
 <?php
 
 use App\Controllers\PostsController;
-include '../app/controllers/postsController.php';
 
 if(isset($_GET['posts'])):
-    include '../app/routers/posts.php';
+    include_once '../app/routers/posts.php';
 else :
+    include '../app/controllers/postsController.php';
     PostsController\indexAction($connection);
 endif;

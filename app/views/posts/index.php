@@ -1,3 +1,10 @@
+                
+                
+        <?php include '../app/views/templates/partials/main/_about-me.php'; ?>
+        <!-- Blog Post (Right Sidebar) Start -->
+          <div class="col-md-9">
+            <div class="col-md-12 page-body">
+              <div class="row">
                 <div class="col-md-12 content-page">
                   <!-- ADD A POST -->
                   <div>
@@ -17,7 +24,7 @@
                       >
                     </div>
                     <div class="post-info">
-                      <span><?php echo $post['created_at'];?></span> | <span><?php echo $post['category_name'];?></span>
+                      <span><?php echo $post['post_date'] ;?></span> | <span><?php echo $post['category_name'];?></span>
                     </div>
                     <p>
                       <?php echo $post['quote'];?>
@@ -45,3 +52,6 @@
                       <li class="page-item"><a class="page-link" href="#">Next</a></li>
                     </ul>
                   </nav>
+                </div>
+              </div>
+            </div>

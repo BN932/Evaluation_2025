@@ -10,7 +10,8 @@ RewriteEngine on
 			#ACTION: showAction()
 			#TITLE: Alex Parker - Title du post
 
-		RewriteRule ^posts\/([1-9][0-9])*\/[a-z0-9][a-z0-9\-].html$ index.php?post=show&id=$1 [L]
+		RewriteRule ^posts/([1-9][0-9]*)/[a-z0-9][a-z0-9\-]*.html$ index.php?posts=show&id=$1 [L]
+
 
 	#ROUTE D'AJOUT D'UN POST: affichage du formulaire
 			#PATTERN: /posts/add/form.html
@@ -18,7 +19,7 @@ RewriteEngine on
 			#ACTION: displayAddPostForm()
 			#TITLE: Alex Parker - Add a post
 
-		RewriteRule ^posts\/add\/form.html$ index.php?posts=add [L]
+		RewriteRule ^posts/add/form.html$ index.php?posts=add [L]
 
 	#ROUTE D'AJOUT D'UN POST: INSERT
 			#PATTERN: /posts/add/insert.html
@@ -26,7 +27,7 @@ RewriteEngine on
 			#ACTION: addOnePost()
 			#PAS DE TITLE CAR REDIRECTION VERS LA PAGE D'ACCUEIL
 
-		RewriteRule ^posts\/add\/insert.html$ index.php?posts=add&action=insert [L]
+		RewriteRule ^posts/add/insert.html$ index.php?posts=add&action=insert [L]
 
 	#ROUTE DE MODIFICATION D'UN POST: Affichage du formulaire
 			#PATTERN: /posts/id/slug-du-post/edit/form.html
@@ -34,7 +35,7 @@ RewriteEngine on
 			#ACTION: displayEditPostForm()
 			#TITLE: Alex Parker - Edit a post
 
-		RewriteRule ^posts\/([1-9][0-9])*\/[a-z0-9][a-z0-9\-]\/edit\/form.html$ index.php?posts=edit&id=$1 [L]
+		RewriteRule ^posts/([1-9][0-9]*)/[a-z0-9][a-z0-9\-]*/edit/form.html$ index.php?posts=edit&id=$1 [L]
 
 	#ROUTE DE MODIFICATION D'UN POST: UPDATE
 			#PATTERN: /posts/id/slug-du-post/edit/update.html
@@ -42,7 +43,7 @@ RewriteEngine on
 			#ACTION: editOnePost()
 			#PAS DE TITLE CAR REDIRECTION VERS LA PAGE DE DETAILS DU POST
 
-		RewriteRule ^posts\/([1-9][0-9])*\/[a-z0-9][a-z0-9\-]\/edit\/update.html$ index.php?posts=edit&id=$1&action=update [L]
+		RewriteRule ^posts/([1-9][0-9]*)/[a-z0-9][a-z0-9\-]*/edit/update.html$ index.php?posts=edit&id=$1&action=update [L]
 
 	#ROUTE DE SUPPRESSION D'UN POST:
 			#PATTERN: /posts/id/slug-du-post/delete.html
@@ -50,7 +51,7 @@ RewriteEngine on
 			#ACTION: deleteOnePost()
 			#PAS DE TITLE CAR REDIRECTION VERS LA PAGE D'ACCUEIL
 
-		RewriteRule ^posts\/([1-9][0-9])*\/[a-z0-9][a-z0-9\-]\/delete.html$ index.php?posts=delete&id=$1 [L]
+		RewriteRule ^posts/([1-9][0-9]*)/[a-z0-9][a-z0-9\-]*/delete.html$ index.php?posts=delete&id=$1 [L]
 
 	#ROUTE DE PAGINATION:
 			#PATTERN /posts/page/numPage
@@ -58,7 +59,7 @@ RewriteEngine on
 			#ACTION: turnPage()
 			#TITLE: Alex Parker - Blog
 
-		RewriteRule ^post\/page\/([1-9][0-9])*$ index.php?posts=page&numPage=$1 [L]
+		RewriteRule ^post/page/([1-9][0-9]*)$ index.php?posts=page&numPage=$1 [L]
 
 
 #---------------------------------------------------

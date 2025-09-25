@@ -16,8 +16,8 @@ switch($_GET['posts']):
         include '../app/routers/pagingRouter.php';
     break;
     case 'delete':
-        
+        PostsController\showAction($connection, $_GET['id']);
     break;
-    default:
-        PostsController\indexAction($connection);
+    /*default:
+        PostsController\indexAction($connection);*/
     endswitch;

@@ -11,7 +11,7 @@
     <meta name="copyright" content="company name" />
     <meta name="robots" content="index,follow" />
 
-    <title>DevBlog - Personal Blog Template</title>
+    <title><?php echo $title; ?></title>
 
     <base href="<?php echo PUBLIC_BASE_URL; ?>">
 

@@ -1,5 +1,11 @@
+                
+        <?php include '../app/views/templates/partials/main/_about-me.php'; ?>
+        <!-- Blog Post (Right Sidebar) Start -->
+          <div class="col-md-9">
+            <div class="col-md-12 page-body">
+              <div class="row">
                 <div class="sub-title">
-                  <a href="/" title="Go to Home Page"
+                  <a href="" title="Go to Home Page"
                     ><h2>Back Home</h2></a
                   >
                   <a href="#comment" class="smoth-scroll"
@@ -81,3 +87,5 @@
                     <!-- Form End -->
                   </div>
                 </div>
+              </div>
+            </div>
