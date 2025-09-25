@@ -22,7 +22,7 @@
                     <!-- Post Headline End -->
 
                     <!-- Form Start -->
-                    <form action="posts/add/insert.html" method="POST" enctype="application/x-www-form-urlencoded">
+                    <form action="posts/add/insert.html" method="POST" enctype="multipart/form-data">
                       <div class="form-group">
                         <label for="title">Title</label>
                         <input
@@ -45,7 +45,7 @@
                       </div>
                       <div class="form-group">
                         <label for="exampleFormControlFile1"> Image</label>
-                        <input type="file" class="form-control-file btn btn-primary" id="exampleFormControlFile1">
+                        <input type="file" name="file" class="form-control-file btn btn-primary" id="exampleFormControlFile1">
                       </div>
                       <div class="form-group">
                         <label for="text">Quote</label>
@@ -67,8 +67,9 @@
                           <option disabled selected>
                             Select your category
                           </option>
-                          <option value="1">Life style</option>
-                          <option value="2">Sport</option>
+                          <?php foreach($categories as $category): ?>
+                          <option value="<?php echo $category['id'];?>"><?php echo $category['name'];?></option>
+                          <?php endforeach;?>
                         </select>
                       </div>
                       <div>

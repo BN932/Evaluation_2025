@@ -8,7 +8,7 @@ function findAll(PDO $connection, int $limit, int $offset = 0){
     $sql = "SELECT posts.*, categories.name AS category_name, DATE(posts.created_at) as post_date
             FROM posts
             JOIN categories ON posts.category_id = categories.id
-            ORDER BY posts.created_at
+            ORDER BY posts.created_at DESC
             LIMIT :limit
             OFFSET :offset;";
     $rs = $connection -> prepare($sql);

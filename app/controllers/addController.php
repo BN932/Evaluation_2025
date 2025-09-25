@@ -3,6 +3,9 @@
 namespace App\Controllers\AddController;
 use \PDO;
 use \App\Models\CategoriesModel;
+use \App\Models\ModifyDbModel;
+use \App\Controllers\PostsController;
+    include '../app/models/modifyDbModel.php';
 
 function displayAddPostForm(PDO $connection){
     $categories = CategoriesModel\findAll($connection);
@@ -13,3 +16,8 @@ function displayAddPostForm(PDO $connection){
     $content = ob_get_clean();
 }
 
+function addAction(PDO $connection, array $data) {
+    $newPost = modifyDbModel\addOnePost($connection, $data);
+    var_dump($newPost);
+    PostsController\indexAction($connection, 0);
+}

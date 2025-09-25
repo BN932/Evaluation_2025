@@ -1,10 +1,9 @@
 <?php
 
 use \App\Controllers\AddController;
-
+include '../app/controllers/addController.php';
 if(isset($_GET['action'])):
-    
+        AddController\addAction($connection, $_POST);
     else:
-        include '../app/controllers/addController.php';
         AddController\displayAddPostForm($connection);
     endif;
