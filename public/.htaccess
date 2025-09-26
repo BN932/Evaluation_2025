@@ -70,4 +70,4 @@ RewriteCond %{REQUEST_URI} !\.(js|css|jpg|gif|zip|png|pdf)$ [NC]
 		#CTRL: App\PostsController\
 		#ACTION: indexAction()
 		#TITLE: Alex Parker - Blog
-	RewriteRule ^(.*)$ index.php [L]
+	RewriteRule ^(./*)$ index.php [L]

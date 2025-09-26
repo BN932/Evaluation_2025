@@ -13,10 +13,10 @@
 
     <title><?php echo $title; ?></title>
 
-    <base href="<?php echo PUBLIC_BASE_URL; ?>">
+    <base href="<?php echo PUBLIC_BASE_URL;?>">
 
     <!-- Favicon -->
-    <link rel="shortcut icon" href="template/images/favicon/favicon.ico" />
+    <link rel="shortcut icon" href="images/favicon/favicon.ico" />
     <link
       rel="apple-touch-icon"
       sizes="144x144"
@@ -25,10 +25,10 @@
     />
 
     <!-- All CSS Plugins -->
-    <link rel="stylesheet" type="text/css" href="template/css/plugin.css" />
+    <link rel="stylesheet" type="text/css" href="css/plugin.css" />
 
     <!-- Main CSS Stylesheet -->
-    <link rel="stylesheet" type="text/css" href="template/css/style.css" />
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
 
     <!-- Google Web Fonts  -->
     <link
