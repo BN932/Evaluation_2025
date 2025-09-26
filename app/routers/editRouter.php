@@ -5,5 +5,5 @@ include '../app/controllers/editController.php';
 if(isset($_GET['action'])):
         EditController\editAction($connection, $_POST);
     else:
-        EditController\displayEditPostForm();
+        EditController\displayEditPostForm($connection, $_GET['id']);
     endif;

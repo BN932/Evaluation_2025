@@ -18,6 +18,5 @@ function displayAddPostForm(PDO $connection){
 
 function addAction(PDO $connection, array $data) {
     $newPost = modifyDbModel\addOnePost($connection, $data);
-    var_dump($newPost);
     PostsController\indexAction($connection, 0);
 }

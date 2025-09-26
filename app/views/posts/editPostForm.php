@@ -61,8 +61,9 @@
                           <option disabled selected>
                             Select your category
                           </option>
-                          <option value="1">Life style</option>
-                          <option value="2">Sport</option>
+                          <?php foreach($categories as $category): ?>
+                          <option value="<?php echo $category['id'];?>"><?php echo $category['name'];?></option>
+                          <?php endforeach;?>
                         </select>
                       </div>
                       <div>
