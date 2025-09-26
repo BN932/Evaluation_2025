@@ -52,7 +52,7 @@
                         >Edit Post</a
                       >
                       <a
-                        href="/posts/<?php echo $post['id'];?>/<?php echo \Core\Helpers\slugify($post['title']);?>/delete.html"
+                        href="posts/<?php echo $post['id'];?>/<?php echo \Core\Helpers\slugify($post['title']);?>/delete.html"
                         type="button"
                         class="btn btn-secondary"
                         role="button"

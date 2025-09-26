@@ -3,10 +3,15 @@
 namespace App\Models\ModifyDbModel;
 use \PDO;
 
-function addOnePost(PDO $connection, array $data){
-    $imageUrl = 'images/blog/'.$data['title'].'.jpeg';
-    $imageName = $data['title'].'.jpeg';
+function insertPicture(array $postData){
+    $imageUrl = 'images/blog/'.$postData['title'].'.jpeg';
+    $imageName = $postData['title'].'.jpeg';
     move_uploaded_file($_FILES["file"]['tmp_name'], $imageUrl);
+    return $imageName;
+}
+
+function addOnePost(PDO $connection, array $data){
+    $imageName = insertPicture($data);
     $sql = "INSERT INTO posts
             SET title = :title,
                 text = :text,
@@ -23,4 +28,13 @@ function addOnePost(PDO $connection, array $data){
     $rs -> execute();
     return $rs -> fetch(PDO::FETCH_ASSOC);
 
+}
+
+function deleteOnePost(PDO $connection, int $id){
+    $sql = "DELETE from posts
+            WHERE id = :id;";
+    $rs = $connection -> prepare($sql);
+    $rs -> bindValue('id', $id, PDO::PARAM_INT);
+    $rs -> execute();
+    return $rs -> fetchColumn(PDO::FETCH_ASSOC);
 }

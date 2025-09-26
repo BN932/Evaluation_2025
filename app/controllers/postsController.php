@@ -4,8 +4,10 @@ namespace App\Controllers\PostsController;
 use \PDO;
 use \App\Models\PostsModel;
 use \App\Models\CategoriesModel;
+use \App\Models\ModifyDbModel;
 include '../app/models/postsModel.php';
 include '../app/models/categoriesModel.php';
+
 
 function indexAction(PDO $connection, int $offset = 0){
     $posts = PostsModel\findAll($connection, 10, $offset);
@@ -28,4 +30,10 @@ function showAction(PDO $connection, int $id){
     $title = "Alex Parker -" . $post['title'];
     include '../app/views/posts/show.php';
     $content = ob_get_clean();
+}
+
+function deleteAction(PDO $connection, int $id){
+    include '../app/models/modifyDbModel.php';
+    ModifyDbModel\deleteOnePost($connection, $id);
+    header('Location: ' . PUBLIC_BASE_URL);
 }
