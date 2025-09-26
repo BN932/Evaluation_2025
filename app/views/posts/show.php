@@ -17,7 +17,7 @@
                 <div class="col-md-12 content-page">
                   <div class="col-md-12 blog-post">
                     <div>
-                      <img src="images/blog/1.jpg" alt="">
+                      <img src="<?php echo $post['image'] ?>" alt="">
                     </div>
 
                     <!-- Post Headline Start -->

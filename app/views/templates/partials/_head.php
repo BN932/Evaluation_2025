@@ -16,7 +16,7 @@
     <base href="<?php echo PUBLIC_BASE_URL; ?>">
 
     <!-- Favicon -->
-    <link rel="shortcut icon" href="templates/images/favicon/favicon.ico" />
+    <link rel="shortcut icon" href="template/images/favicon/favicon.ico" />
     <link
       rel="apple-touch-icon"
       sizes="144x144"
