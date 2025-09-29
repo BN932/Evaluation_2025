@@ -2,15 +2,16 @@
 
 namespace App\Controllers\EditController;
 
-use \App\Models\ModifyDbModel;
+use \App\Models\EditDbModel;
 use \App\Models\PostsModel;
 use \App\Controllers\PostsController;
 use \App\Models\CategoriesModel;
 use \PDO;
 
-function editAction(PDO $connection, array $data){
-    ModifyDbModel\editOnePost($connection, $data);
-    PostsController\showAction($connection, $array['id']);
+function editAction(PDO $connection, int $id, array $data, ){
+    include '../app/models/editDbModel.php';
+    EditDbModel\editOnePostById($connection, $id, $data);
+    PostsController\showAction($connection, $id);
 }
 
 function displayEditPostForm(PDO $connection, int $id){

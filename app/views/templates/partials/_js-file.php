@@ -1,2 +1,2 @@
 <!-- Main Javascript File  -->
-    <script type="text/javascript" src="template/js/scripts.js"></script>
+    <script type="text/javascript" src="js/scripts.js"></script>

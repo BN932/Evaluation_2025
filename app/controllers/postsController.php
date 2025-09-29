@@ -4,7 +4,7 @@ namespace App\Controllers\PostsController;
 use \PDO;
 use \App\Models\PostsModel;
 use \App\Models\CategoriesModel;
-use \App\Models\ModifyDbModel;
+use \App\Models\EditDbModel;
 include '../app/models/postsModel.php';
 include '../app/models/categoriesModel.php';
 
@@ -33,7 +33,7 @@ function showAction(PDO $connection, int $id){
 }
 
 function deleteAction(PDO $connection, int $id){
-    include '../app/models/modifyDbModel.php';
-    ModifyDbModel\deleteOnePost($connection, $id);
+    include '../app/models/editDbModel.php';
+    EditDbModel\deleteOnePostById($connection, $id);
     header('Location: ' . PUBLIC_BASE_URL);
 }

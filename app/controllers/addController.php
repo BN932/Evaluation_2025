@@ -3,9 +3,9 @@
 namespace App\Controllers\AddController;
 use \PDO;
 use \App\Models\CategoriesModel;
-use \App\Models\ModifyDbModel;
+use \App\Models\EditDbModel;
 use \App\Controllers\PostsController;
-    include '../app/models/modifyDbModel.php';
+    include '../app/models/editDbModel.php';
 
 function displayAddPostForm(PDO $connection){
     $categories = CategoriesModel\findAll($connection);
@@ -17,6 +17,6 @@ function displayAddPostForm(PDO $connection){
 }
 
 function addAction(PDO $connection, array $data) {
-    $newPost = modifyDbModel\addOnePost($connection, $data);
+    $newPost = EditDbModel\addOnePostById($connection, $data);
     PostsController\indexAction($connection, 0);
 }
