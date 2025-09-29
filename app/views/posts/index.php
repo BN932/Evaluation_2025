@@ -45,11 +45,11 @@
 
                   <nav aria-label="Page navigation example" style="text-align: center;">
                     <ul class="pagination">
-                      <li class="page-item"><a class="page-link" href="posts/page/<?php echo ($i-1)?>">Previous</a></li>
+                      <li class="page-item"><a class="page-link" href="#">Previous</a></li>
                       <?php for($i=1; $i<=$nbrPages; $i++):?>
                       <li class="page-item"><a class="page-link" href="posts/page/<?php echo $i?>"><?php echo $i?></a></li>
                       <?php endfor?>
-                      <li class="page-item"><a class="page-link" href="posts/page/<?php echo ($i+1)?>">Next</a></li>
+                      <li class="page-item"><a class="page-link" href="#">Next</a></li>
                     </ul>
                   </nav>
                 </div>

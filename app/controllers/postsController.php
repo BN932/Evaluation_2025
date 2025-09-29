@@ -39,6 +39,10 @@ function deleteAction(PDO $connection, int $id){
 }
 
 function goToPage(PDO $connection, int $pageNbr){
+    if($pageNbr === 1):
+        header('Location: ' . PUBLIC_BASE_URL);
+    else:
     $offset = ($pageNbr * 10) - 10;
     indexAction($connection, $offset);
+    endif;
 }
