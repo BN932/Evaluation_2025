@@ -37,3 +37,8 @@ function deleteAction(PDO $connection, int $id){
     EditDbModel\deleteOnePostById($connection, $id);
     header('Location: ' . PUBLIC_BASE_URL);
 }
+
+function goToPage(PDO $connection, int $pageNbr){
+    $offset = ($pageNbr * 10) - 10;
+    indexAction($connection, $offset);
+}

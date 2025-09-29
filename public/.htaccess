@@ -59,7 +59,7 @@ RewriteEngine on
 			#ACTION: turnPage()
 			#TITLE: Alex Parker - Blog
 
-		RewriteRule ^post/page/([1-9][0-9]*)$ index.php?posts=page&numPage=$1 [L]
+		RewriteRule ^posts/page/([1-9][0-9]*)$ index.php?posts=page&numPage=$1 [L]
 
 
 #---------------------------------------------------

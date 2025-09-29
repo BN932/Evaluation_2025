@@ -13,7 +13,7 @@ switch($_GET['posts']):
         include '../app/routers/editRouter.php';
     break;
     case 'page':
-        include '../app/routers/pagingRouter.php';
+        PostsController\goToPage($connection, $_GET['numPage']);
     break;
     case 'delete':
         PostsController\deleteAction($connection, $_GET['id']);
