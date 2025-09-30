@@ -4,11 +4,11 @@ namespace App\Models\EditDbModel;
 use \PDO;
 
 function insertPicture(array $postData){
-    if (isset(($postData['oldPath']))):
+    if (isset(($postData['oldFileName']))):
         if(isset($_FILES)):
             $imageUrl = 'images/blog/image-post-'.$postData['title'].'.jpeg';
             $imageName = 'image-post-'.$postData['title'].'.jpeg';
-            $path = 'images/blog/'.$postData['oldPath'];
+            $path = 'images/blog/'.$postData['oldFileName'];
             unlink($path);
             move_uploaded_file($_FILES["file"]['tmp_name'], $imageUrl);
             return $imageName;
@@ -42,7 +42,10 @@ function addOnePostById(PDO $connection, array $data){
 
 }
 
-function deleteOnePostById(PDO $connection, int $id){
+function deleteOnePostById(PDO $connection, array $post){
+    $path = 'images/blog/'.$post['image'];
+    unlink($path);
+    
     $sql = "DELETE from posts
             WHERE id = :id;";
     $rs = $connection -> prepare($sql);

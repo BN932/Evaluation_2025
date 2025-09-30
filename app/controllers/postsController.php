@@ -33,8 +33,9 @@ function showAction(PDO $connection, int $id){
 }
 
 function deleteAction(PDO $connection, int $id){
+    $post = PostsModel\findOneById($connection, $id);
     include '../app/models/editDbModel.php';
-    EditDbModel\deleteOnePostById($connection, $id);
+    EditDbModel\deleteOnePostById($connection, $post);
     header('Location: ' . PUBLIC_BASE_URL);
 }
 

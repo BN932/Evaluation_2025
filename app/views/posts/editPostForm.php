@@ -29,7 +29,7 @@
                         />
                         <input
                           type="hidden"
-                          name="oldPath"
+                          name="oldFileName"
                           id="title"
                           value="<?php echo $post['image'];?>"
                           class="form-control"
