@@ -19,7 +19,7 @@ function findAll(PDO $connection, int $limit, int $offset = 0){
 }
 
 function findOneById(PDO $connection, int $id){
-    $sql = "SELECT posts.*, categories.name AS category_name
+    $sql = "SELECT posts.*, categories.name AS category_name, DATE(posts.created_at) as post_date
             FROM posts
             JOIN categories ON categories.id = posts.category_id
             WHERE posts.id = :id;";

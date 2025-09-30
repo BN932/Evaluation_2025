@@ -1,5 +1,5 @@
                 
-        <?php include '../app/views/templates/partials/main/_about-me.php'; ?>
+        <?php include '../app/views/templates/partials/_about-me.php'; ?>
         <!-- Blog Post (Right Sidebar) Start -->
           <div class="col-md-9">
             <div class="col-md-12 page-body">
@@ -90,3 +90,6 @@
                 </div>
               </div>
             </div>
+            <?php include '../app/views/templates/partials/_footer.php'; ?>
+          <!-- Blog Post (Right Sidebar) End -->
+        </div>

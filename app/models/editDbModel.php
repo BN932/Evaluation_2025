@@ -4,16 +4,16 @@ namespace App\Models\EditDbModel;
 use \PDO;
 
 function insertPicture(array $postData){
-    if (isset(($postData['oldFileName']))):
-        if(isset($_FILES)):
+    if($postData['oldFileName']!=NULL):
+        if(file_exists($_FILES['file']['tmp_name'])):
             $imageUrl = 'images/blog/image-post-'.$postData['title'].'.jpeg';
             $imageName = 'image-post-'.$postData['title'].'.jpeg';
             $path = 'images/blog/'.$postData['oldFileName'];
-            unlink($path);
             move_uploaded_file($_FILES["file"]['tmp_name'], $imageUrl);
             return $imageName;
         else:
             $imageName = 'image-post-'.$postData['title'].'.jpeg';
+            unlink('images/blog/'.$postData['oldFileName']);
         endif;
     else:
         $imageUrl = 'images/blog/image-post-'.$postData['title'].'.jpeg';
@@ -43,15 +43,15 @@ function addOnePostById(PDO $connection, array $data){
 }
 
 function deleteOnePostById(PDO $connection, array $post){
-    $path = 'images/blog/'.$post['image'];
-    unlink($path);
-    
-    $sql = "DELETE from posts
-            WHERE id = :id;";
-    $rs = $connection -> prepare($sql);
-    $rs -> bindValue('id', $id, PDO::PARAM_INT);
-    $rs -> execute();
-    return $rs -> fetchColumn(PDO::FETCH_ASSOC);
+    if(isset($post['image'])):
+        $path = 'images/blog/'.$post['image'];
+        unlink($path);
+    endif;
+        $sql = "DELETE from posts
+                WHERE id = :id;";
+        $rs = $connection -> prepare($sql);
+        $rs -> bindValue('id', $post['id'], PDO::PARAM_INT);
+        $rs -> execute();
 }
 
 function editOnePostById(PDO $connection, int $id, array $data){

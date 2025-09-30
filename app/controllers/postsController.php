@@ -26,7 +26,7 @@ function showAction(PDO $connection, int $id){
     $categories = CategoriesModel\findAll($connection);
 
     ob_start();
-    global $title, $content;
+    global $title, $content, $show_partials;
     $title = "Alex Parker -" . $post['title'];
     include '../app/views/posts/show.php';
     $content = ob_get_clean();

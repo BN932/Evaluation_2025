@@ -1,3 +1,7 @@
+                <?php include '../app/views/templates/partials/_about-me.php'; ?>
+          <div class="col-md-9">
+            <div class="col-md-12 page-body">
+              <div class="row">
                 <div class="sub-title">
                   <a href="" title="Go to Home Page"
                     ><h2>Back Home</h2></a
@@ -11,7 +15,7 @@
                   <div class="col-md-12 blog-post">
                     <!-- Post Headline Start -->
                     <div class="post-title">
-                      <h1><?php echo $title ?></h1>
+                      <h1><?php echo $post['title'] ?></h1>
                     </div>
                     <!-- Post Headline End -->
 
@@ -30,10 +34,8 @@
                         <input
                           type="hidden"
                           name="oldFileName"
-                          id="title"
                           value="<?php echo $post['image'];?>"
                           class="form-control"
-                          placeholder="Enter your title here"
                         />
                       </div>
                       <div class="form-group">
@@ -44,6 +46,7 @@
                           class="form-control"
                           rows="5"
                           placeholder="Enter your text here"
+                          
                         ><?php echo $post['text'];?></textarea>
                       </div>
                       <div class="form-group">
@@ -94,3 +97,8 @@
                     <!-- Form End -->
                   </div>
                 </div>
+              </div>
+            </div>
+            <?php include '../app/views/templates/partials/_footer.php'; ?>
+          <!-- Blog Post (Right Sidebar) End -->
+        </div>

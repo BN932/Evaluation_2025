@@ -1,6 +1,6 @@
                 
                 
-        <?php include '../app/views/templates/partials/main/_about-me.php'; ?>
+        <?php include '../app/views/templates/partials/_about-me.php'; ?>
         <!-- Blog Post (Right Sidebar) Start -->
           <div class="col-md-9">
             <div class="col-md-12 page-body">
@@ -18,16 +18,16 @@
                   <div class="col-md-12 blog-post row">
                     <div class="post-title">
                       <a href="posts/<?php echo $post['id'];?>/<?php echo \Core\Helpers\slugify($post['title']);?>.html"
-                        ><h1>
+                        ><h2>
                           <?php echo $post['title'];?>
-                        </h1></a
+                        </h2></a
                       >
                     </div>
                     <div class="post-info">
                       <span><?php echo $post['post_date'] ;?></span> | <span><?php echo $post['category_name'];?></span>
                     </div>
                     <p>
-                      <?php echo $post['quote'];?>
+                      <?php echo \Core\Helpers\truncate($post['quote']);?>
                     </p>
                     <a
                       href="posts/<?php echo $post['id'];?>/<?php echo \Core\Helpers\slugify($post['title']);?>.html"
@@ -55,3 +55,6 @@
                 </div>
               </div>
             </div>
+            <?php include '../app/views/templates/partials/_footer.php'; ?>
+          <!-- Blog Post (Right Sidebar) End -->
+          </div>

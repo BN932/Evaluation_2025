@@ -1,6 +1,6 @@
 
                 
-        <?php include '../app/views/templates/partials/main/_about-me.php'; ?>
+        <?php include '../app/views/templates/partials/_about-me.php'; ?>
         <!-- Blog Post (Right Sidebar) Start -->
           <div class="col-md-9">
             <div class="col-md-12 page-body">
@@ -22,15 +22,15 @@
 
                     <!-- Post Headline Start -->
                     <div class="post-title">
-                      <h1>
+                      <h2>
                         <?php echo $post['title'];?>
-                      </h1>
+                      </h2>
                     </div>
                     <!-- Post Headline End -->
 
                     <!-- Post Detail Start -->
                     <div class="post-info">
-                      <span><?php echo $post['created_at'];?></span> | <span><?php echo $post['category_name'];?></span>
+                      <span><?php echo $post['post_date'];?></span> | <span><?php echo $post['category_name'];?></span>
                     </div>
                     <!-- Post Detail End -->
 
@@ -65,4 +65,8 @@
               </div>
             </div>
           </div>
+          <?php include '../app/views/templates/partials/_footer.php'; ?>
+          <!-- Blog Post (Right Sidebar) End -->
+        </div>
+           <?php include '../app/views/templates/partials/show/_endpage-box.php';?>
 

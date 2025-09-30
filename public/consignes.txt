@@ -1,71 +1,71 @@
 ALEX PARKER - CONSIGNES
 
 3 PAGES :
-	1. My Blog (page par défaut) :
-		- Liste des posts du blog triés par date décroissante et limités à 10 /CHECK\
-		- Texte tronqué à 150 caractères /CHECK\
-		- Date formatée /CHECK\
-		- Lien vers le détails d'un post /CHECK\
-		- Lien vers le formulaire d'ajout d'un post /CHECK\
+	1. My Blog (page par défaut) : //CHECK\\
+		- Liste des posts du blog triés par date décroissante et limités à 10 //CHECK\\
+		- Texte tronqué à 150 caractères //CHECK\\
+		- Date formatée //CHECK\\
+		- Lien vers le détails d'un post //CHECK\\
+		- Lien vers le formulaire d'ajout d'un post //CHECK\\
 
-	2. Détails d'un post
-		- title, text, categorie et quote du post /CHECK\
-		- lien pour la modification et la suppression du post /CHECK\
+	2. Détails d'un post //CHECK\\
+		- title, text, categorie et quote du post //CHECK\\
+		- lien pour la modification et la suppression du post //CHECK\\
 
-	3. Formulaire d'ajout et de modification d'un post
-		- title, text, image, categorie et quote du post /CHECK\
+	3. Formulaire d'ajout et de modification d'un post //CHECK\\
+		- title, text, image, categorie et quote du post //CHECK\\
 
-LA LISTE DES CATEGORIES DANS LE MENU
-	Ajouter la liste des catégories dans la colonne de gauche (présente sur chaque page) /CHECK\
-	Vous ne devez pas activer ces liens, juste les afficher !!! /CHECK\
-	(Pas de routes pour les catégories) /CHECK\
+LA LISTE DES CATEGORIES DANS LE MENU //CHECK\\
+	Ajouter la liste des catégories dans la colonne de gauche (présente sur chaque page) //CHECK\\
+	Vous ne devez pas activer ces liens, juste les afficher !!! //CHECK\\
+	(Pas de routes pour les catégories) //CHECK\\
 
 BONUS: 
-	- afficher le nombre de posts pour chaque catégorie dans la liste des catégories /CHECK\
-	- Pagination 
-	- upload de l'image d'un post /CHECK\
+	- afficher le nombre de posts pour chaque catégorie dans la liste des catégories //CHECK\\
+	- Pagination 70% //CHECK\\
+	- upload de l'image d'un post //CHECK\\
 
 
 ROUTES
-	ROUTE PAR DEFAUT: liste des posts /CHECK\
-		PATTERN: /
+	ROUTE PAR DEFAUT: liste des posts //CHECK\\
+		PATTERN: /   //CHECK\\
 		CTRL: ???
 		ACTION: ???
 		TITLE: Alex Parker - Blog
 
 	ROUTE DU DETAIL D'UN POST
-			PATTERN: /posts/id/slug-du-post.html /CHECK\
+			PATTERN: /posts/id/slug-du-post.html //CHECK\\
 			URL: ???
 			CTRL: ???
 			ACTION: ???
 			TITLE: Alex Parker - Title du post
 
-	ROUTE D'AJOUT D'UN POST: affichage du formulaire /CHECK\
-			PATTERN: /posts/add/form.html
+	ROUTE D'AJOUT D'UN POST: affichage du formulaire //CHECK\\
+			PATTERN: /posts/add/form.html //CHECK\\
 			CTRL: ???
 			ACTION: ???
 			TITLE: Alex Parker - Add a post
 
-	ROUTE D'AJOUT D'UN POST: INSERT  /CHECK\
-			PATTERN: /posts/add/insert.html
+	ROUTE D'AJOUT D'UN POST: INSERT  //CHECK\\
+			PATTERN: /posts/add/insert.html //CHECK\\
 			CTRL: ???
 			ACTION: ???
 			PAS DE TITLE CAR REDIRECTION VERS LA PAGE D'ACCUEIL
 
-	ROUTE DE MODIFICATION D'UN POST: Affichage du formulaire  /CHECK\
+	ROUTE DE MODIFICATION D'UN POST: Affichage du formulaire  //CHECK\\
 			PATTERN: /posts/id/slug-du-post/edit/form.html
 			CTRL: ???
 			ACTION: ???
 			TITLE: Alex Parker - Edit a post
 
-	ROUTE DE MODIFICATION D'UN POST: UPDATE
-			PATTERN: /posts/id/slug-du-post/edit/update.html
+	ROUTE DE MODIFICATION D'UN POST: UPDATE //CHECK\\
+			PATTERN: /posts/id/slug-du-post/edit/update.html //CHECK\\
 			CTRL: ???
 			ACTION: ???
 			PAS DE TITLE CAR REDIRECTION VERS LA PAGE DE DETAILS DU POST
 
-	ROUTE DE SUPPRESSION D'UN POST:  /CHECK\
-			PATTERN: /posts/id/slug-du-post/delete.html
+	ROUTE DE SUPPRESSION D'UN POST:  //CHECK\\
+			PATTERN: /posts/id/slug-du-post/delete.html //CHECK\\
 			CTRL: ???
 			ACTION: ???
 			PAS DE TITLE CAR REDIRECTION VERS LA PAGE D'ACCUEIL
