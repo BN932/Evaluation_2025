@@ -1,11 +1,10 @@
 <?php
 
-namespace App\Controllers\AddController;
+namespace App\Controllers\CreateController;
 use \PDO;
 use \App\Models\CategoriesModel;
 use \App\Models\EditDbModel;
 use \App\Controllers\PostsController;
-    include '../app/models/editDbModel.php';
 
 function displayAddPostForm(PDO $connection){
     $categories = CategoriesModel\findAll($connection);
@@ -16,7 +15,8 @@ function displayAddPostForm(PDO $connection){
     $content = ob_get_clean();
 }
 
-function addAction(PDO $connection, array $data) {
+function createAction(PDO $connection, array $data) {
+    include_once '../app/models/editDbModel.php';
     $newPost = EditDbModel\addOnePostById($connection, $data);
     PostsController\indexAction($connection, 0);
 }

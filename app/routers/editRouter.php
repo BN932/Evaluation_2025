@@ -1,9 +1,0 @@
-<?php
-
-use \App\Controllers\EditController;
-include '../app/controllers/editController.php';
-if(isset($_GET['action'])):
-        EditController\editAction($connection, $_GET['id'], $_POST);
-    else:
-        EditController\displayEditPostForm($connection, $_GET['id']);
-    endif;

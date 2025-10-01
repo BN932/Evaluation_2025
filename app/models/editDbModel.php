@@ -4,22 +4,28 @@ namespace App\Models\EditDbModel;
 use \PDO;
 
 function insertPicture(array $postData){
-    if($postData['oldFileName']!=NULL):
+    if(isset($postData['oldFileName'])):
         if(file_exists($_FILES['file']['tmp_name'])):
             $imageUrl = 'images/blog/image-post-'.$postData['title'].'.jpeg';
-            $imageName = 'image-post-'.$postData['title'].'.jpeg';
-            $path = 'images/blog/'.$postData['oldFileName'];
+            $name = 'image-post-'.$postData['title'].'.jpeg';
             move_uploaded_file($_FILES["file"]['tmp_name'], $imageUrl);
-            return $imageName;
+            return $name;
         else:
-            $imageName = 'image-post-'.$postData['title'].'.jpeg';
-            unlink('images/blog/'.$postData['oldFileName']);
+            $imageUrl = 'images/blog/image-post-'.$postData['title'].'.jpeg';
+            $name = 'image-post-'.$postData['title'].'.jpeg';
+            rename('images/blog/'.$postData['oldFileName'], $imageUrl);
+            return $name;
         endif;
     else:
-        $imageUrl = 'images/blog/image-post-'.$postData['title'].'.jpeg';
-        $imageName = 'image-post-'.$postData['title'].'.jpeg';
-        move_uploaded_file($_FILES["file"]['tmp_name'], $imageUrl);
-        return $imageName;
+        if(file_exists($_FILES['file']['tmp_name'])):
+            $imageUrl = 'images/blog/image-post-'.$postData['title'].'.jpeg';
+            $name= 'image-post-'.$postData['title'].'.jpeg';
+            move_uploaded_file($_FILES["file"]['tmp_name'], $imageUrl);
+            return $name;
+        else:
+            $name = '';
+            return $name;
+        endif;
     endif;
 }
 function addOnePostById(PDO $connection, array $data){

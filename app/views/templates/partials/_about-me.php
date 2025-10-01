@@ -3,7 +3,7 @@
             <div class="about-fixed">
               <div class="my-pic">
                 <a href="index.html"
-                  ><img src="template/images/pic/my-pic.png" alt=""
+                  ><img src="images/pic/my-pic.png" alt=""
                 /></a>
                 <nav id="menu">
                   <ul class="menu-link">
