@@ -1,5 +1,5 @@
 <?php
-use App\Controllers\PostsController;
+use \App\Controllers\PostsController;
 use \App\Controllers\CreateController;
 use \App\Controllers\UpdateController;
 

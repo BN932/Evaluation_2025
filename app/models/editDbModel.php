@@ -8,6 +8,7 @@ function insertPicture(array $postData){
         if(file_exists($_FILES['file']['tmp_name'])):
             $imageUrl = 'images/blog/image-post-'.$postData['title'].'.jpeg';
             $name = 'image-post-'.$postData['title'].'.jpeg';
+            unlink('images/blog/'.$postData['oldFileName']);
             move_uploaded_file($_FILES["file"]['tmp_name'], $imageUrl);
             return $name;
         else:

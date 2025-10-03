@@ -5,8 +5,9 @@ use \PDO;
 use \App\Models\PostsModel;
 use \App\Models\CategoriesModel;
 use \App\Models\EditDbModel;
-include '../app/models/postsModel.php';
-include '../app/models/categoriesModel.php';
+include_once '../app/models/postsModel.php';
+include_once '../app/models/categoriesModel.php';
+include_once '../app/models/editDbModel.php';
 
 
 function indexAction(PDO $connection, int $offset = 0){
@@ -17,7 +18,7 @@ function indexAction(PDO $connection, int $offset = 0){
     ob_start();
     global $content, $title;
     $title = "Alex Parker - Blog";
-    include '../app/views/posts/index.php';
+    include_once '../app/views/posts/index.php';
     $content = ob_get_clean();
 }
 
@@ -28,7 +29,7 @@ function showAction(PDO $connection, int $id){
     ob_start();
     global $title, $content, $show_partials;
     $title = "Alex Parker -" . $post['title'];
-    include '../app/views/posts/show.php';
+    include_once '../app/views/posts/show.php';
     $content = ob_get_clean();
 }
 
