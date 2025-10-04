@@ -53,13 +53,21 @@ RewriteEngine on
 
 		RewriteRule ^posts/([1-9][0-9]*)/[a-z0-9][a-z0-9\-]*/delete.html$ index.php?posts=delete&id=$1 [L]
 
-	#ROUTE DE PAGINATION:
+	#ROUTE DE PAGINATION (NOMBRES):
 			#PATTERN /posts/page/numPage
-			#CTRL: App\PostsController
-			#ACTION: turnPage()
+			#CTRL: App\PagesController
+			#ACTION: goToPage()
 			#TITLE: Alex Parker - Blog
 
 		RewriteRule ^posts/page/([1-9][0-9]*)$ index.php?posts=page&numPage=$1 [L]
+
+		#ROUTE DE PAGINATION (LIENS):
+			#PATTERN /posts/page/direction
+			#CTRL: App\PagesController
+			#ACTION: previousPage() || nextPage()
+			#TITLE: Alex Parker - Blog
+
+		RewriteRule ^posts/page/([a-z][a-z]*)$ index.php?posts=page&direction=$1 [L]
 
 
 #---------------------------------------------------

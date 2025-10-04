@@ -14,9 +14,9 @@ function indexAction(PDO $connection, int $offset = 0){
     $posts = PostsModel\findAll($connection, 10, $offset);
     $categories = CategoriesModel\findAll($connection);
     $nbrPages = (int) PostsModel\countPages($connection); 
-    $nbrPages = $nbrPages/10;
+    $nbrPages = ceil($nbrPages/10);
     ob_start();
-    global $content, $title;
+    global $content, $title, $page;
     $title = "Alex Parker - Blog";
     include_once '../app/views/posts/index.php';
     $content = ob_get_clean();
@@ -40,10 +40,12 @@ function deleteAction(PDO $connection, int $id){
 }
 
 function goToPage(PDO $connection, int $pageNbr){
-    if($pageNbr === 1):
+    $nbrPages = (int) PostsModel\countPages($connection);
+    global $page;
+    if($pageNbr===1):
         header('Location: ' . PUBLIC_BASE_URL);
     else:
-    $offset = ($pageNbr * 10) - 10;
-    indexAction($connection, $offset);
+        $offset = ($pageNbr * 10) - 10;
+        indexAction($connection, $offset);
     endif;
 }

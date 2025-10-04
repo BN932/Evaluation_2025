@@ -14,7 +14,7 @@ function displayEditPostForm(PDO $connection, int $id){
     ob_start();
     global $content, $title;
     $title = "Alex Parker - Edit a post";
-    include '../app/views/posts/editPostForm.php';
+    include_once '../app/views/posts/editPostForm.php';
     $content = ob_get_clean();
 }
 

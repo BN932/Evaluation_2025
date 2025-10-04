@@ -3,9 +3,9 @@ use \App\Controllers\PostsController;
 use \App\Controllers\CreateController;
 use \App\Controllers\UpdateController;
 
-include '../app/controllers/postsController.php';
-include '../app/controllers/createController.php';
-include '../app/controllers/updateController.php';
+include_once '../app/controllers/postsController.php';
+include_once '../app/controllers/createController.php';
+include_once '../app/controllers/updateController.php';
 
 switch($_GET['posts']):
     case 'show':
@@ -24,7 +24,9 @@ switch($_GET['posts']):
         UpdateController\postAction($connection, $_GET['id'], $_POST);
     break;
     case 'page':
-        PostsController\goToPage($connection, $_GET['numPage']);
+        $page = $_GET['numPage'];
+        echo $page;
+        PostsController\goToPage($connection, $page);
     break;
     case 'delete':
         PostsController\deleteAction($connection, $_GET['id']);

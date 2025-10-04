@@ -30,13 +30,16 @@
                           value="<?php echo $post['title'];?>"
                           class="form-control"
                           placeholder="Enter your title here"
+                          required
                         />
+                        <?php if($post['image']): ;?>
                         <input
                           type="hidden"
                           name="oldFileName"
                           value="<?php echo $post['image'];?>"
                           class="form-control"
                         />
+                        <?php endif;?>
                       </div>
                       <div class="form-group">
                         <label for="text">Text</label>
@@ -46,6 +49,7 @@
                           class="form-control"
                           rows="5"
                           placeholder="Enter your text here"
+                          required
                           
                         ><?php echo $post['text'];?></textarea>
                       </div>
@@ -61,6 +65,7 @@
                           class="form-control"
                           rows="5"
                           placeholder="Enter your quote here"
+                          required
                         ><?php echo $post['quote'];?></textarea>
                       </div>
                       <div class="form-group">
@@ -69,6 +74,7 @@
                           id="category"
                           name="category_id"
                           class="form-control"
+                          required
                         >
                             <?php echo $post['category_name'];?>
                           </option>
