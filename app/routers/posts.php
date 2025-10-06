@@ -24,8 +24,8 @@ switch($_GET['posts']):
         UpdateController\postAction($connection, $_GET['id'], $_POST);
     break;
     case 'page':
+        //Mise à jour de la valeur de la globale $page
         $page = $_GET['numPage'];
-        echo $page;
         PostsController\goToPage($connection, $page);
     break;
     case 'delete':

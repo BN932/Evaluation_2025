@@ -70,5 +70,6 @@
           <?php include '../app/views/templates/partials/_footer.php'; ?>
           <!-- Blog Post (Right Sidebar) End -->
         </div>
+        <!--Inclusion du partial spécifique à la vue show-->
            <?php include '../app/views/templates/partials/show/_endpage-box.php';?>
 

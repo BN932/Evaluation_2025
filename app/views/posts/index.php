@@ -45,12 +45,14 @@
 
                   <nav aria-label="Page navigation example" style="text-align: center;">
                     <ul class="pagination">
+                      <!--Le bouton previous ne sera pas affiché sur la page 1-->
                       <?php if($page > 1): ;?>
                       <li class="page-item"><a class="page-link" href="posts/page/<?php echo($page-1);?>">Previous</a></li>
                       <?php endif; ?>
                       <?php for($i=1; $i<=$nbrPages; $i++):?>
                         <li class="page-item"><a class="page-link" href="posts/page/<?php echo $i?>"><?php echo $i?></a></li>
                       <?php endfor?>
+                      <!--Le bouton next ne sera pas affiché sur la dernière page-->
                       <?php if($page < $nbrPages ): ;?>
                       <li class="page-item"><a class="page-link" href="posts/page/<?php echo($page+1);?>">Next</a></li>
                       <?php endif; ?>

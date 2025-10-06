@@ -42,7 +42,6 @@
                           class="form-control"
                           rows="5"
                           placeholder="Enter your text here"
-                          required
                         ></textarea>
                       </div>
                       <div class="form-group">
@@ -57,7 +56,6 @@
                           class="form-control"
                           rows="5"
                           placeholder="Enter your quote here"
-                          required
                         ></textarea>
                       </div>
                       <div class="form-group">
@@ -68,6 +66,9 @@
                           class="form-control"
                           required
                         >
+                          <option disabled selected>Select a category
+
+                          </option>
                           <?php foreach($categories as $category): ?>
                           <option value="<?php echo $category['id'];?>"><?php echo $category['name'];?></option>
                           <?php endforeach;?>
